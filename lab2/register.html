@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,7 +22,7 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 500px; 
+            max-width: 500px;
             box-sizing: border-box;
         }
         .registration-container h1,
@@ -78,26 +79,35 @@
         .registration-form .checkbox-group input {
             margin-right: 5px;
         }
-        
         @media (max-width: 768px) {
             .registration-container {
-                width: auto; 
+                width: auto;
                 margin: 15px;
             }
         }
-
         @media (max-width: 480px) {
             .registration-container {
-                margin: 15px 5px; 
+                margin: 15px 5px;
             }
             .registration-form .gender {
-                flex-direction: column; 
+                flex-direction: column;
             }
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            width: auto;
+            height: 50px;
         }
     </style>
 </head>
 <body>
     <div class="registration-container">
+        <div class="logo">
+            <img src="https://i.imgur.com/JfuyQt3.png" alt="IBU Logo">
+        </div>
         <h1>International Burch University</h1>
         <h2>REGISTRATION FORM</h2>
         <form class="registration-form">
@@ -134,3 +144,4 @@
     </div>
 </body>
 </html>
+
