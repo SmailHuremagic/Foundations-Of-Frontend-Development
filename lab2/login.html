@@ -52,15 +52,29 @@
         }
         .login-form a {
             text-decoration: none;
-            color: #0066cc;
+            color: black;
             display: block;
             text-align: center;
             margin-top: 10px;
+        }
+        .login-form a.register-link {
+            text-decoration: underline;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            width: auto;
+            height: 50px; 
         }
     </style>
 </head>
 <body>
     <div class="login-container">
+        <div class="logo">
+            <img src="https://i.imgur.com/JfuyQt3.png" alt="IBU Logo">
+        </div>
         <h1>Login page</h1>
         <p>Welcome.<br>Please Login</p>
         <form class="login-form">
@@ -73,7 +87,7 @@
                 <input type="password" id="password" placeholder="Enter your password">
             </div>
             <button type="submit">SUBMIT</button>
-            <a href="register.html">Don't have an account? Register NOW</a>
+            <a href="register.html" class="register-link">Don't have an account? Register NOW</a>
             <a href="forgot-password.html">Forgot your password?</a>
         </form>
     </div>
