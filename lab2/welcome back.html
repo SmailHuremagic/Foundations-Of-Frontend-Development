@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #ffffff;
+        }
+        .header-container {
+            margin-bottom: 30px;
+        }
+        .logo img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+        .welcome-message {
+            color: blue;
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin: 20px auto;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        .courses-header {
+            margin-top: 50px;
+        }
+        .fenms-cell {
+            width: 110%; 
+        }
+        th {
+            background-color: #ffffff; 
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <div class="logo">
+            <img src="https://i.imgur.com/xBlmWjI.png" alt="IBU Logo">
+        </div>
+        <div class="welcome-message">Welcome back dear student!</div>
+    </div>
+    <div class="courses-header">
+        <h2>Registered courses:</h2>
+        <table>
+            <tr>
+                <th>Course code</th>
+                <th>Course Name</th>
+                <th>ETCS</th>
+            </tr>
+            <tr>
+                <td class="fenms-cell">FENMS 035</td>
+                <td>Foundations of Frontend Web Development</td>
+                <td>5.0</td>
+            </tr>
+            <tr>
+                <td>IT 101</td>
+                <td>Database Design and Implementation</td>
+                <td>6.0</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
