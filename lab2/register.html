@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7f7f7;
+        }
+        .registration-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 342px; /* adjusted to fit the form width */
+        }
+        .registration-container h1 {
+            text-align: center;
+            color: #333;
+            font-size: 24px; /* slightly larger heading */
+        }
+        .registration-form {
+            margin-top: 20px;
+        }
+        .registration-form input[type="text"],
+        .registration-form input[type="password"],
+        .registration-form input[type="email"],
+        .registration-form input[type="tel"],
+        .registration-form input[type="date"],
+        .registration-form textarea {
+            width: calc(100% - 22px); /* adjusted for padding and border */
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .registration-form input[type="radio"] {
+            margin-right: 5px;
+        }
+        .registration-form button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+        .registration-form label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .registration-form .gender-radio,
+        .registration-form .notification-checkbox {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-container">
+        <h1>REGISTRATION FORM</h1>
+        <form class="registration-form">
+            <label>Firstname:</label>
+            <input type="text" placeholder="Enter your firstname">
+            <label>Lastname:</label>
+            <input type="text" placeholder="Enter your lastname">
+            <label>Username:</label>
+            <input type="text" placeholder="Enter your username">
+            <label>Password:</label>
+            <input type="password" placeholder="Enter your password">
+            <label>Date of birth:</label>
+            <input type="date">
+            <label>Place of birth:</label>
+            <input type="text" placeholder="Enter place of birth">
+            <div class="gender-radio">
+                <label><input type="radio" name="gender" value="male"> Male</label>
+                <label><input type="radio" name="gender" value="female"> Female</label>
+                <label><input type="radio" name="gender" value="other"> Other</label>
+            </div>
+            <label>Email:</label>
+            <input type="email" placeholder="Enter your email">
+            <label>Phone:</label>
+            <input type="tel" placeholder="Enter your phone number">
+            <label>Hair color:</label>
+            <input type="text" placeholder="Enter your hair color">
+            <label>Notes:</label>
+            <textarea placeholder="Additional notes"></textarea>
+            <div class="notification-checkbox">
+                <input type="checkbox" id="notifications" name="notifications">
+                <label for="notifications">Receive notifications</label>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>
