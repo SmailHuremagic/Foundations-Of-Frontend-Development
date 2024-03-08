@@ -22,21 +22,23 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 500px;
+            max-width: 400px;
             box-sizing: border-box;
-        }
-        .registration-container h1,
-        .registration-container h2 {
             text-align: center;
-            color: #333;
+        }
+        .registration-container h1 {
+            font-size: 1.5em;
+            margin: 0.67em 0;
         }
         .registration-container h2 {
-            font-size: 0.9em;
-            margin-top: 0;
+            font-size: 1.17em;
+            margin: 1em 0;
         }
         .registration-form {
             display: flex;
             flex-direction: column;
+            gap: 10px;
+            align-items: flex-start;
         }
         .registration-form input[type="text"],
         .registration-form input[type="email"],
@@ -48,6 +50,10 @@
             margin-bottom: 15px;
             border: 1px solid #ddd;
             border-radius: 4px;
+            width: calc(100% - 22px); /* Accounting for padding and border */
+        }
+        .registration-form input[type="radio"] {
+            margin-right: 5px;
         }
         .registration-form button {
             padding: 10px;
@@ -56,50 +62,37 @@
             background-color: #333;
             color: white;
             cursor: pointer;
-            margin-top: 10px;
+            width: 100%;
         }
         .registration-form label {
-            margin-bottom: 5px;
             color: #333;
-        }
-        .registration-form .gender {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-        .registration-form .gender label {
-            margin: 0;
+            display: block;
         }
         .registration-form .checkbox-group {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
         }
         .registration-form .checkbox-group input {
             margin-right: 5px;
         }
-        @media (max-width: 768px) {
-            .registration-container {
-                width: auto;
-                margin: 15px;
-            }
+        .color-picker-container {
+            display: flex;
+            align-items: center;
         }
-        @media (max-width: 480px) {
-            .registration-container {
-                margin: 15px 5px;
-            }
-            .registration-form .gender {
-                flex-direction: column;
-            }
+        .color-picker-container input[type="color"] {
+            border: none;
+            margin-left: 10px;
+            width: 50px; /* You can adjust this value */
+            height: 34px; /* Match the height of input fields */
+            padding: 0;
         }
         .logo {
             text-align: center;
             margin-bottom: 20px;
         }
         .logo img {
-            width: auto;
-            height: 50px;
+            width: 100px; /* Adjusted to the size in the form image */
+            height: auto;
         }
     </style>
 </head>
@@ -111,28 +104,38 @@
         <h1>International Burch University</h1>
         <h2>REGISTRATION FORM</h2>
         <form class="registration-form">
-            <label for="firstname">Firstname:</label>
-            <input type="text" id="firstname" placeholder="Enter your firstname">
-            <label for="lastname">Lastname:</label>
-            <input type="text" id="lastname" placeholder="Enter your lastname">
+            <div style="display: flex; width: 100%; justify-content: space-between;">
+                <div style="flex: 1; margin-right: 10px;">
+                    <label for="firstname">Firstname:</label>
+                    <input type="text" id="firstname" placeholder="Enter your firstname">
+                </div>
+                <div style="flex: 1;">
+                    <label for="lastname">Lastname:</label>
+                    <input type="text" id="lastname" placeholder="Enter your lastname">
+                </div>
+            </div>
             <label for="username">Username:</label>
             <input type="text" id="username" placeholder="Enter username">
             <label for="password">Password:</label>
             <input type="password" id="password" placeholder="Enter password">
             <label for="dob">Date of birth:</label>
             <input type="date" id="dob">
-            <div class="gender">
+            <label for="pob">Place of birth:</label>
+            <input type="text" id="pob" placeholder="Enter place of birth">
+            <div>
                 <span>Gender:</span>
-                <label><input type="radio" name="gender" value="male">Male</label>
-                <label><input type="radio" name="gender" value="female">Female</label>
-                <label><input type="radio" name="gender" value="other">Other</label>
+                <label><input type="radio" name="gender" value="male"> Male</label>
+                <label><input type="radio" name="gender" value="female"> Female</label>
+                <label><input type="radio" name="gender" value="other"> Other</label>
             </div>
             <label for="email">Email:</label>
             <input type="email" id="email" placeholder="Enter email">
             <label for="phone">Phone:</label>
             <input type="tel" id="phone" placeholder="Enter phone number">
-            <label for="haircolor">Hair color:</label>
-            <input type="text" id="haircolor" placeholder="Enter hair color">
+            <div class="color-picker-container">
+                <label for="haircolor-picker">Hair color:</label>
+                <input type="color" id="haircolor-picker" value="#000000">
+            </div>
             <label for="notes">Notes:</label>
             <textarea id="notes" placeholder="Additional notes"></textarea>
             <div class="checkbox-group">
