@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <style>
@@ -13,10 +14,10 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f7f7f7;
+            background-color: #FFFFFF;
         }
         .login-container {
-            background-color: white;
+            background-color: #FFFFFF;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -39,7 +40,7 @@
             margin-bottom: 10px;
             border: 1px solid #ddd;
             border-radius: 4px;
-            box-sizing: border-box; 
+            box-sizing: border-box;
         }
         .login-form button {
             width: 100%;
@@ -66,7 +67,7 @@
         }
         .logo img {
             width: auto;
-            height: 50px; 
+            height: 50px;
         }
     </style>
 </head>
@@ -75,21 +76,37 @@
         <div class="logo">
             <img src="https://i.imgur.com/JfuyQt3.png" alt="IBU Logo">
         </div>
-        <h1>Login page</h1>
+        <h1>Login Page</h1>
         <p>Welcome.<br>Please Login</p>
-        <form class="login-form">
+        <form class="login-form" onsubmit="event.preventDefault(); login();">
             <div>
                 <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Enter your email">
+                <input type="email" id="email" placeholder="Enter your email" required>
             </div>
             <div>
                 <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter your password">
+                <input type="password" id="password" placeholder="Enter your password" required>
             </div>
             <button type="submit">SUBMIT</button>
             <a href="register.html" class="register-link">Don't have an account? Register NOW</a>
             <a href="forgot-password.html">Forgot your password?</a>
         </form>
     </div>
+
+    <script>
+        function login() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            // The credentials should be validated on the server.
+            // This is just for demonstration purposes.
+            if(email === "webdev@gmail.com" && password === "123123") {
+                window.location.href = 'wback.html';
+            } else {
+                alert('Incorrect email or password. Please try again.');
+            }
+        }
+    </script>
 </body>
 </html>
+
