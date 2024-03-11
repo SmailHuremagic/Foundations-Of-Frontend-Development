@@ -3,15 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Your Web Application</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    
     <header>
+        <h1 class="visually-hidden">Your Web Application Name</h1> <!-- Visually hidden but accessible for screen readers -->
         <nav>
-            <ul>
+            <div class="logo">
+                <img src="images/logo.png" alt="Website Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -19,40 +25,67 @@
 
     
     <main>
+        
+        <section id="home" class="home-banner">
+            <h2>Welcome to Our Website</h2>
+            <p>Description about the website or business. This is where you can make a strong first impression.</p>
+            <img src="images/home-banner.jpg" alt="Home Banner Image">
+        </section>
+
+        
         <section id="about">
-            <h2>About Me</h2>
-            <p>Your bio here...</p>
-            <img src="assets/images/profile.jpg" alt="Profile Image">
+            <article>
+                <h2>About Us</h2>
+                <p>Information about the business or individual. This could include history, goals, or unique aspects that set you apart.</p>
+                <img src="images/about.jpg" alt="About Us Image">
+            </article>
         </section>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <div>
-                <h3>Project 1</h3>
-                <p>Description of project 1...</p>
-                <img src="assets/images/project1.jpg" alt="Project 1 Image">
+        
+        <section id="services">
+            <h2>Our Services</h2>
+            <div class="service-items">
+                
+                <article class="service-item">
+                    <h3>Service 1</h3>
+                    <p>Brief description of Service 1.</p>
+                    <img src="images/service1.jpg" alt="Service 1 Image">
+                </article>
+                
             </div>
-            <div>
-                <h3>Project 2</h3>
-                <p>Description of project 2...</p>
-                <img src="assets/images/project2.jpg" alt="Project 2 Image">
-            </div>
-            <!-- Add more projects as needed -->
         </section>
 
+        
         <section id="contact">
-            <h2>Contact Me</h2>
-            <form>
-                <input type="text" id="name" name="name" placeholder="Your Name">
-                <input type="email" id="email" name="email" placeholder="Your Email">
-                <textarea id="message" name="message" placeholder="Your Message"></textarea>
-                <input type="submit" value="Send Message">
+            <h2>Contact Us</h2>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send</button>
             </form>
         </section>
     </main>
 
+    
     <footer>
-        <p>Footer content goes here.</p>
+        <div class="footer-content">
+            <p>&copy; 2024 Your Website Name</p>
+            <p>Contact us: <a href="mailto:contact@example.com">contact@example.com</a></p>
+            
+        </div>
     </footer>
 
     <script src="js/script.js"></script>
