@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+body {
+    background-color: #85AFD4;
+    font-family: 'Lato', sans-serif;
+    color: white;
+    text-align: center;
+    position: relative; /* Added to position the background image */
+}
+
+h1 {
+    font-weight: bold;
+}
+
+p {
+    font-weight: normal;
+}
+
+button {
+    background-color: #E47272;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d66262;
+}
+
+a {
+    font-weight: bold;
+    color: white;
+}
+
+.content {
+    padding: 20px;
+    position: relative; /* Added to ensure content is above the background image */
+    z-index: 1; /* Higher z-index to ensure content is above the background image */
+}
+
+table {
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 2px solid white;
+}
+
+th, td {
+    padding: 10px;
+}
+
+/* New CSS for the background image */
+.bg-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0; /* Ensures that the image stays behind the content */
+}
+
