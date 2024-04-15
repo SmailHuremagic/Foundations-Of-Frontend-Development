@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table with Sorting and Hover Effects</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            cursor: pointer;
+        }
+
+        .sorted {
+            background-color: #f1f1f1;
+        }
+
+        .sorted::after {
+            content: "";
+            display: inline-block;
+            width: 0px;
+            height: 0px;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 8px solid #ddd;
+        }
+
+        .sorted.desc::after {
+            border-top: none;
+            border-bottom: 8px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)">ID</th>
+                <th onclick="sortTable(1)">Name</th>
+                <th onclick="sortTable(2)">Country</th>
+                <th onclick="sortTable(3)">Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+        const data = [
+            { id: 1, name: "John Doe", country: "Afghanistan", email: "johnl@example.com" },
+            { id: 2, name: "Jane Smith", country: "Albania", email: "jane2@example.com" },
+            { id: 3, name: "Jim Brown", country: "Algeria", email: "jim3@example.com" },
+            { id: 4, name: "Jake White", country: "Andorra", email: "jake4@example.com" },
+            { id: 5, name: "Julie Black", country: "Angola", email: "julies@example.com" },
+            { id: 6, name: "Jennifer Green", country: "Antigua and Barbuda", email: "jennifer6@example.com" }
+        ];
+
+        function sortTable(colIndex) {
+            const isDesc = document.querySelector('th.sorted')?.classList.contains('desc');
+            const direction = isDesc ? 'asc' : 'desc';
+
+            data.sort((a, b) => {
+                const sortingOrder = direction === 'asc' ? 1 : -1;
+                if (typeof a[colIndex] === "string") {
+                    return a[colIndex].localeCompare(b[colIndex]) * sortingOrder;
+                } else {
+                    return (a[colIndex] - b[colIndex]) * sortingOrder;
+                }
+            });
+
+            document.querySelectorAll('th').forEach(th => th.classList.remove('sorted', 'desc'));
+            document.querySelector(`th:nth-child(${colIndex + 1})`).classList.add('sorted', direction);
+
+            buildTable();
+        }
+
+        function buildTable() {
+            const tableBody = document.querySelector('tbody');
+            tableBody.innerHTML = '';
+
+            data.forEach(item => {
+                const row = document.createElement('tr');
+                row.addEventListener('mouseover', () => row.classList.add('hover'));
+                row.addEventListener('mouseout', () => row.classList.remove('hover'));
+                row.innerHTML = `<td>${item.id}</td>
+                <td>${item.name}</td>
+                <td>${item.country}</td>
+                <td>${item.email}</td>
+                <td><button onclick="alert('You clicked on the user: ${item.name}')">Click</button></td>`;
+                tableBody.appendChild(row);
+            });
+        }
+
+        buildTable();
+    </script>
+</body>
+</html>
