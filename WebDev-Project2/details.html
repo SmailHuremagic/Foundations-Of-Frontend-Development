@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Details</title>
+</head>
+<body>
+    <h1>Item Details</h1>
+    <div id="itemDetails">
+        <!-- Item details will be displayed here dynamically -->
+    </div>
+
+    <script>
+        // Function to fetch and display item details
+        function fetchItemDetails(itemId) {
+            // You can make an API call here to fetch details based on itemId
+            // For demonstration purposes, I'll just show a sample item
+            const sampleItem = {
+                id: itemId,
+                name: 'Sample Item',
+                description: 'This is a sample item description.',
+                price: '$10.00'
+            };
+
+            // Display item details on the page
+            document.getElementById('itemDetails').innerHTML = `
+                <h2>${sampleItem.name}</h2>
+                <p><strong>Description:</strong> ${sampleItem.description}</p>
+                <p><strong>Price:</strong> ${sampleItem.price}</p>
+            `;
+        }
+
+        // Extract the itemId from the URL query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const itemId = urlParams.get('id');
+
+        // Fetch and display item details
+        fetchItemDetails(itemId);
+    </script>
+</body>
+</html>
