@@ -489,15 +489,3 @@ footer {
     width: 100% !important;
   }
 }
-/* Add some style to your gallery items */
-.galleryItem {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-/* Style for the modal image */
-.modal-content {
-  width: 100%;
-  height: auto;
-}
