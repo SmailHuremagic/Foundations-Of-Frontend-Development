@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form id="registrationForm">
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" name="firstname" required placeholder="Enter your first name">
+
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" name="lastname" required placeholder="Enter your last name">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required minlength="8" placeholder="Enter your password">
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>
