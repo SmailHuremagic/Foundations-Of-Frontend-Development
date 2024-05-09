@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="3QIhaAigRDT3vqtST51JTP7mPvvhWJv_tYWwGc6aU94" />
+  <title>Apple Inn.</title>
+
+  <!-- 
+    - bootstrap link
+  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;700&family=Saira+Stencil+One&display=swap"
+    rel="stylesheet" />
+  
+</head>
+
+<body id="top" class="dark_theme">
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+      <h1 class="h1 logo">
+        <a href="#">Apple Inn<span>.</span></a>
+      </h1>
+
+      <div class="navbar-actions">
+        <select name="language" id="lang">
+          <option value="en">En</option>
+        </select>
+
+        <button class="theme-btn" aria-label="Change Theme" title="Change Theme" data-theme-btn>
+          <span class="icon"></span>
+        </button>
+      </div>
+
+      <button class="nav-toggle-btn" aria-label="Toggle Menu" title="Toggle Menu" data-nav-toggle-btn>
+        <span class="one"></span>
+        <span class="two"></span>
+        <span class="three"></span>
+      </button>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li>
+            <a href="#gallery" class="navbar-link">Gallery.</a>
+          </li>
+
+          <li>
+            <a href="#products" class="navbar-link">Products.</a>
+          </li>
+
+          <li>
+            <a href="#faqs" class="navbar-link">FAQs.</a>
+          </li>
+
+          <li>
+            <a href="#contact" class="navbar-link">Contact.</a>
+
+          </li>
+            <a href="news.html" class="navbar-link">News.</a>
+          </li>
+
+            <a href="weather.html" class="navbar-link">Weather.</a>
+            
+          </li>
+            <a href="usergenerator.html" class="navbar-link">UserGenerator.</a>
+          </li>
+            <a href="NASA.html" class="navbar-link">NASA.</a>
+          </li>
+            <a href="youtube.html" class="navbar-link">Youtube.</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 
+        - #HERO
+      -->
+
+    <article class="container">
+      <!-- Interactive Gallery -->
+<div id="gallery" style="min-height: 20px;"></div>
+<div class="title d-flex justify-content-center" style="margin-top: 130px;">
+  <h1 class="logo">Interactive Gallery</h1>
+</div>
+<div class="image-gallery">
+  <div class="gallery">
+    <a href="#" class="gallery-link" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="assets/images/gallery-1.jpeg" data-description="Beautiful view of lake with mountains in the background">
+      <img src="assets/images/gallery-1.jpeg" alt="Beautiful view of lake with mountains" width="300" height="250">
+    </a>
+    <p class="p2">Beautiful View of Lake with Mountains</p>
+  </div>
+  <div class="gallery">
+    <a href="#" class="gallery-link" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="assets/images/gallery-2.jpeg" data-description="Beach side view with palm trees">
+      <img src="assets/images/gallery-2.jpeg" alt="Beach side view with palm trees" width="300" height="250">
+    </a>
+    <p class="p2">Beach Side View with Palm Trees</p>
+  </div>
+  <div class="gallery">
+    <a href="#" class="gallery-link" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="assets/images/gallery-3.jpeg" data-description="Crazy lake view with reflection of mountains">
+      <img src="assets/images/gallery-3.jpeg" alt="Crazy lake view with reflection of mountains" width="300" height="250">
+    </a>
+    <p class="p2">Crazy Lake View with Reflection of Mountains</p>
+  </div>
+  <div class="gallery">
+    <a href="#" class="gallery-link" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="assets/images/image-4.jpeg" data-description="Peaceful view of crystal blue lake">
+      <img src="assets/images/image-4.jpeg" alt="Peaceful view of crystal blue lake" width="300" height="250">
+    </a>
+    <p class="p2">Peaceful View of Crystal Blue Lake</p>
+  </div>
+</div>
+
+
+        <!-- Bootstrap Modal -->
+        <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="imageModalLabel">Image</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <img id="modalImage" src="" class="img-fluid" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 
+          - Products
+        -->
+        <div id="products" style="min-height: 20px;"></div>
+        <div class="title d-flex justify-content-center" style="margin-top: 130px;">
+          <h1 class="h1 logo">
+            <p>Products</p>
+          </h1>
+        </div>
+        <div class="row" id="productCardsRow">
+           
+        </div>   
+
+        <!-- Edit Product Modal -->
+      <div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editProductModalLabel">Edit Product</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <!-- Edit product form -->
+              <form id="editProductForm">
+                <div class="mb-3">
+                  <label for="editTitle" class="form-label">Title</label>
+                  <input type="text" class="form-control" id="editTitle" name="title">
+                </div>
+                <div class="mb-3">
+                  <label for="editPrice" class="form-label">Price</label>
+                  <input type="text" class="form-control" id="editPrice" name="price">
+                </div>
+                <div class="mb-3">
+                  <label for="editStock" class="form-label">Stock</label>
+                  <input type="text" class="form-control" id="editStock" name="stock">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="editProductButton">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- 
+          - FAQs
+        -->
+        <div id="faqs" style="min-height: 20px;"></div>
+        <div class="title d-flex justify-content-center" style="margin-top: 80px;">
+          <h1 class="h1 logo">
+            <p>FAQs</p>
+          </h1>
+        </div>
+        <div class="accordion mt-5" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                What payment methods do you accept?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>We accept major credit cards (Visa, Mastercard, American Express) as well as PayPal.</strong>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                How long does shipping take?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Shipping times vary depending on your location and the shipping method chosen. Typically, orders are processed within 1-2 business days and delivery takes 3-5 business days for standard shipping.</strong>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Do you offer international shipping?
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Yes, we offer international shipping to most countries. Shipping rates and delivery times vary depending on the destination.</strong>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item" style="display: none;">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                What is your return policy?
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>We offer a 30-day return policy for unused and unopened items. Please refer to our Returns & Refunds page for more information.</strong>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item" style="display: none;">
+            <h2 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                How can I track my order?
+              </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Once your order has been shipped, you will receive a tracking number via email. You can use this tracking number to track the status of your order on our website or through the courier's website.</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="reset mb-5" id="showMoreButton" style="margin-top: 30px;" onclick="toggleFAQs()">Show More</button>
+        
+        <!-- 
+        - #CONTACT
+      -->
+      <div id="contact" style="min-height: 30px;"></div>
+      <section class="contact">
+        <div class="contact-content section-content">
+          <p class="section-subtitle">Contact</p>
+
+          <h2 class="h3 section-title">
+            Do You Have Any Queries? Please Drop a Message
+          </h2>
+
+          <p class="section-text">
+            Get in touch and let us know how we can help. Fill out the form and
+            we’ll be in touch as soon as possible.
+          </p>
+
+          <ul class="contact-list">
+            <li class="contact-list-item">
+              <div class="contact-item-icon">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+
+              <div class="wrapper">
+                <h3 class="h4 contact-item-title">Address:</h3>
+
+                <address class="contact-info">
+                  Street Fast Lane, LA
+                </address>
+              </div>
+            </li>
+
+            <li class="contact-list-item">
+              <div class="contact-item-icon">
+                <ion-icon name="call-outline"></ion-icon>
+              </div>
+
+              <div class="wrapper">
+                <h3 class="h4 contact-item-title">Phone:</h3>
+
+                <a href="tel:923201416687" class="contact-info">+1 123 456 7890</a>
+
+              </div>
+            </li>
+
+            <li class="contact-list-item">
+              <div class="contact-item-icon">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+
+              <div class="wrapper">
+                <h3 class="h4 contact-item-title">Email:</h3>
+
+                <a href="#" class="contact-info">contactus@mystores.com</a>
+
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <form id="contactForm" action="" method="post" enctype="text/plain" class="contact-form">
+          <div class="form-wrapper">
+            <label for="name" class="form-label">* Name</label>
+            <div class="input-wrapper">
+              <input type="text" name="name" id="name" required placeholder="e.g Don Carlos" class="input-field" />
+              <ion-icon name="person-circle"></ion-icon>
+            </div>
+          </div>
+          <div class="form-wrapper">
+            <label for="email" class="form-label">* Email</label>
+            <div class="input-wrapper">
+              <input type="email" name="email" id="email" required placeholder="e.g contactus@mystores.com"
+                class="input-field" />
+              <ion-icon name="mail"></ion-icon>
+            </div>
+          </div>
+          <div class="form-wrapper">
+            <label for="phone" class="form-label">* Phone</label>
+            <div class="input-wrapper">
+              <input type="tel" name="phone" id="phone" required placeholder="Phone Number" class="input-field" />
+              <ion-icon name="call"></ion-icon>
+            </div>
+          </div>
+          <div class="form-wrapper">
+            <label for="message" class="form-label">* Message</label>
+            <div class="input-wrapper">
+              <textarea name="message" id="message" required placeholder="Write message..."
+                class="input-field"></textarea>
+              <ion-icon name="chatbubbles"></ion-icon>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+      </section>
+
+    </article>
+  </main>
+  </main>
+
+
+  <div role="alert" aria-live="assertive" aria-atomic="true" class="toast fixed-bottom m-5 ms-auto"
+    data-bs-autohide="false">
+    <div class="toast-header">
+        <strong class="me-auto">Form Submission Status</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+        Success or Failure!
+    </div>
+  </div>
+  
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="container">
+      <p class="h1 logo">
+        <a href="#">Apple Inn<span>.</span> </a>
+      </p>
+
+      <p class="copyright">
+        &copy; 2023 <a href="#">Apple Inn</a>. All rights reserved
+      </p>
+    </div>
+  </footer>
+
+  <!-- 
+    - #GO TO TOP
+  -->
+
+  <div class="gotop">
+    <a href="#top" class="go-top" data-go-top title="Go to Top">
+      <ion-icon name="arrow-up"></ion-icon>
+    </a>
+  </div>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- 
+    - bootstrap link
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+  <script src="assets/js/accordion.js"></script>
+  <script src="assets/js/contact.js"></script>
+  <script src="assets/js/fetchdata.js"></script>
+
+</body>
+
+</html>
