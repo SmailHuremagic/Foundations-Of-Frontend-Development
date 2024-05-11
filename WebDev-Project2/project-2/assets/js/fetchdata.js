@@ -143,34 +143,3 @@ async function getNews(){
 }
 getNews();
 
-const weatherAPI = () => {
-  // Define your API key here
-  const apiKey = '941e6484a62654d8cf8199d902cdf9ef'; // Replace 'your-api-key' with your actual API key
-
-  // Fetch Weather
-  const fetchWeather = (city) => {
-      fetch(
-          `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
-      )
-          .then((response) => response.json())
-          .then((data) => displayWeather(data));
-  };
-
-  const displayWeather = (data) => {
-      const { name } = data;
-      const { icon, description } = data.weather[0];
-      const { temp, humidity } = data.main;
-      const { speed } = data.wind;
-
-      document.body.style.backgroundImage = `url(https://source.unsplash.com/1920x1080/?${name})`;
-      document.querySelector('.city').innerHTML = `Current Weather in ${name}`;
-      document.querySelector('.temperature').innerHTML = `${Math.floor(temp)}°C`;
-      document.querySelector('.icon').src = `http://openweathermap.org/img/wn/${icon}.png`;
-      document.querySelector('.description').innerHTML = `${description}`;
-      document.querySelector('.humidity').innerHTML = `Humidity: ${humidity}%`;
-      document.querySelector('.wind-speed').innerHTML = `Speed: ${speed} Km/s`;
-      document.querySelector('.weather-info').classList.remove('loading');
-  };
-
-};
-
