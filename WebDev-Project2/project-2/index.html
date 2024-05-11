@@ -75,22 +75,36 @@
             <a href="#contact" class="navbar-link">Contact.</a>
 
           </li>
-            <a href="news.html" class="navbar-link">News.</a>
+            <a href="#" onclick="loadModalContent('news.html', 'News Information'); return false;" class="navbar-link">News.</a>
           </li>
-
-            <a href="weather.html" class="navbar-link">Weather.</a>
-            
+            <a href="#" onclick="loadModalContent('weather.html', 'Weather Information'); return false;" class="navbar-link">Weather.</a>
           </li>
-            <a href="usergenerator.html" class="navbar-link">UserGenerator.</a>
+            <a href="#" onclick="loadModalContent('usergenerator.html', 'User Generator'); return false;" class="navbar-link">UserGenerator.</a>
           </li>
-            <a href="NASA.html" class="navbar-link">NASA.</a>
+            <a href="#" onclick="loadModalContent('NASA.html', 'NASA Exploration'); return false;" class="navbar-link">NASA.</a>
           </li>
-            <a href="youtube.html" class="navbar-link">Youtube.</a>
+            <a href="#" onclick="loadModalContent('youtube.html', 'YouTube Videos'); return false;" class="navbar-link">YouTube.</a>
           </li>
         </ul>
       </nav>
     </div>
   </header>
+
+<!-- Dynamic Content Modal -->
+<div class="modal fade" id="dynamicContentModal" tabindex="-1" aria-labelledby="dynamicContentModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="dynamicContentModalLabel">Dynamic Content</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Content will be loaded here -->
+      </div>
+    </div>
+  </div>
+</div>
+
 
   <main>
     <!-- 
@@ -427,6 +441,7 @@
   <script src="assets/js/accordion.js"></script>
   <script src="assets/js/contact.js"></script>
   <script src="assets/js/fetchdata.js"></script>
+  <script src="assets/js/content.js"></script>
 
 </body>
 

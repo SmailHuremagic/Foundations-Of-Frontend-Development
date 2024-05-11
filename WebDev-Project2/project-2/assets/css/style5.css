@@ -1,21 +1,38 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+/* Ensure the modal content takes full available height */
+.modal-content {
+    height: 100%; /* This can be set to a percentage of the viewport if needed */
+    display: flex;
+    flex-direction: column;
 }
 
-h1 {
-    margin-top: 50px;
+.modal-body {
+    flex-grow: 1; /* Allows the modal body to expand and fill any available space */
+    display: flex; /* Establish flexbox */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center; /* Ensure text is centered */
+    padding: 20px; /* Optional: Add padding for aesthetic spacing */
 }
 
-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+#userGeneratorContainer {
+    width: 100%; /* Full width of the modal body */
+    display: flex; /* Apply flexbox */
+    flex-direction: column; /* Vertical stacking */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
 }
 
-#userInfo {
-    margin-top: 20px;
+#userGeneratorImage {
+    max-width: 90%; /* Limit the image width to 90% of its container */
+    height: auto; /* Maintain aspect ratio */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#userGeneratorDetails {
+    font-size: 14px;
+    line-height: 1.5;
+    width: 80%; /* Restrict text width for better readability */
+    margin-top: 20px; /* Space between image and text */
 }
