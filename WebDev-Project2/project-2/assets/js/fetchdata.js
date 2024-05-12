@@ -1,4 +1,5 @@
 var products;
+localStorage.setItem("name", "Smail");
 
 $(document).ready(function() {
     $.ajax({
@@ -6,7 +7,7 @@ $(document).ready(function() {
       type: 'GET',
       dataType: 'json',
       success: function(data) {
-        products = data.products.slice(0, 10);
+        products = data.products.slice(0, 10);;
         console.log("first prod:", data.products[0]);
         document.getElementById('productCardsRow').innerHTML = generateProductCards(products);
       },
@@ -45,7 +46,7 @@ function generateProductCards(products) {
               <div class="text-muted">Stock: ${product.stock}</div>
 
               <!-- Link to open product details page -->
-              <a href="product.html?id=${product.id}" class="btn btn-warning mt-4 text-white cart-btn"><i class="icon-cart-add mr-2"></i>View More</a>
+              <button class="btn btn-warning mt-4 text-white cart-btn view-product" data-product-id="${product.id}"><i class="icon-cart-add mr-2"></i>View More</button>
               <button class="btn btn-warning mt-4 text-white cart-btn edit-product" data-product-id="${product.id}"><i class="icon-cart-add mr-2"></i>Edit</button>
               <button class="btn btn-warning mt-4 text-white cart-btn delete-product" data-product-id="${product.id}"><i class="icon-cart-add mr-2"></i>Delete</button>
             </div>
@@ -65,6 +66,15 @@ document.addEventListener('click', function(event) {
         document.getElementById('productCardsRow').innerHTML = generateProductCards(products);
         console.log('Product deleted with ID:', productId);
     }
+});
+
+document.addEventListener('click', function(event) {
+  if (event.target.classList.contains('view-product')) {
+      var productId = event.target.dataset.productId;
+      localStorage.setItem("products", JSON.stringify(products));
+      console.log("Name set in localStorage:", localStorage.getItem("products"));
+      window.location.href = `product.html?id=${productId}`;
+  }
 });
 
 function handleEditProductModal(product) {

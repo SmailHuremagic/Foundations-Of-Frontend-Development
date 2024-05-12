@@ -17,34 +17,22 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-  // Function to parse query parameters from URL
-  var products;
+  document.addEventListener('DOMContentLoaded', function() {
+    var productsString = localStorage.getItem("products");
+    var products = JSON.parse(productsString);
+    var productId = getQueryParam('id');
+    console.log("Product ID:", productId);
+    console.log("Products: ", products);
 
-  $(document).ready(function() {
-    // Make an Ajax request to fetch JSON data
-    $.ajax({
-      url: 'https://dummyjson.com/products',
-      type: 'GET',
-      dataType: 'json',
-      success: function(data) {
-        products = data.products.slice(0, 10);
-        console.log("In product page: ", products);
+    console.log(products[0].id);
+    var product = products.find(p => p.id === parseInt(productId));
 
-        var productId = getQueryParam('id');
-        console.log(productId);
-        console.log(products[0].id);
-        var product = products.find(p => p.id === parseInt(productId));
+    if (product) {
+        document.getElementById('productDetailsRow').innerHTML = generateProductDetails(product);
+    } else {
+        document.getElementById('productDetailsRow').innerHTML = '<div class="col"><p class="text-center">Product not found</p></div>';
+    }
 
-        if (product) {
-            document.getElementById('productDetailsRow').innerHTML = generateProductDetails(product);
-        } else {
-            document.getElementById('productDetailsRow').innerHTML = '<div class="col"><p class="text-center">Product not found</p></div>';
-        }
-      },
-      error: function(xhr, status, error) {
-        console.error('Failed to fetch JSON data:', error);
-      }
-    });
   });
 
   function getQueryParam(param) {
