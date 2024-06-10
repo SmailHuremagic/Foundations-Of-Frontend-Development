@@ -1,6 +1,6 @@
-// src/pages/Blog.js
 import React, { useState, useEffect } from 'react';
-import { Typography, Box, Card, CardContent, Avatar } from '@mui/material';
+import { Typography, Box, Card, CardContent, CardMedia, Grid, Avatar, CardActionArea, CircularProgress } from '@mui/material';
+import InfiniteScroll from 'react-infinite-scroll-component';  // You need to install this package
 
 const author = {
   name: "John Doe",
@@ -10,43 +10,68 @@ const author = {
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);
+  const [hasMore, setHasMore] = useState(true);
 
   useEffect(() => {
-    // Fetch posts from an API
-    fetch('/api/posts')
-      .then(response => response.json())
-      .then(data => setPosts(data));
+    fetchPosts(); // Initial fetch
   }, []);
 
+  const fetchPosts = () => {
+    fetch('/api/posts')
+      .then(response => response.json())
+      .then(data => {
+        setPosts(prevPosts => [...prevPosts, ...data]);
+        setHasMore(data.length > 0); // Assume more data if any was returned
+      });
+  };
+
   return (
-    <Box>
+    <Box sx={{ flexGrow: 1, mx: 3 }}>
       <Typography variant="h2" gutterBottom>
         Blog
       </Typography>
       <Typography variant="body1" paragraph>
-        This is the blog page where you can find all articles.
+        Explore a world of articles.
       </Typography>
-      <Box mt={5}>
-        <Card>
-          <CardContent>
-            <Box display="flex" alignItems="center">
-              <Avatar src={author.avatar} sx={{ width: 56, height: 56, mr: 2 }} />
-              <Box>
-                <Typography variant="h6">{author.name}</Typography>
-                <Typography variant="body2" color="textSecondary">{author.bio}</Typography>
-              </Box>
-            </Box>
-          </CardContent>
-        </Card>
+      <Box mt={2} display="flex" alignItems="center">
+        <Avatar src={author.avatar} sx={{ width: 56, height: 56, mr: 2 }} />
+        <Typography variant="h6">{author.name}</Typography>
       </Box>
-      {posts.map(post => (
-        <Card key={post.id} sx={{ marginBottom: 2 }}>
-          <CardContent>
-            <Typography variant="h5">{post.title}</Typography>
-            <Typography variant="body1">{post.content}</Typography>
-          </CardContent>
-        </Card>
-      ))}
+      <Typography variant="body2" color="textSecondary" sx={{ mb: 4 }}>
+        {author.bio}
+      </Typography>
+      <InfiniteScroll
+        dataLength={posts.length}
+        next={fetchPosts}
+        hasMore={hasMore}
+        loader={<CircularProgress />}
+        endMessage={<Typography>No more posts to show.</Typography>}
+      >
+        <Grid container spacing={4}>
+          {posts.map(post => (
+            <Grid item key={post.id} xs={12} sm={6} md={4}>
+              <Card raised sx={{ height: '100%', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s', '&:hover': { transform: 'scale(1.03)' } }}>
+                <CardActionArea sx={{ flexGrow: 1 }}>
+                  <CardMedia
+                    component="img"
+                    height="140"
+                    image={post.image || "https://source.unsplash.com/random"}
+                    alt={post.title}
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                      {post.title}
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary">
+                      {post.summary || 'No summary available.'}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </InfiniteScroll>
     </Box>
   );
 };
