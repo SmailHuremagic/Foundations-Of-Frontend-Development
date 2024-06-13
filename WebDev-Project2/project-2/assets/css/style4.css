@@ -1,89 +1,112 @@
-/* Base Modal Styles Scoped to #weatherModal */
-#weatherModal .modal-content {
-    background-color: white;
-    border-radius: 8px;
-    border: 1px solid #dee2e6;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease-out, opacity 0.3s ease-in;
-    padding: 20px;
-}
-
-.weather-link {
-    font-weight: bold; /* Makes the text bold */
-}
-
-header .navbar .weather-link {
-    font-weight: bold;
-}
-
-
-#weatherModal .modal.show .modal-dialog {
-    transform: scale(1.05);
-    opacity: 0;
-    animation: scaleIn 0.3s forwards;
-}
-
-@keyframes scaleIn {
-    from {
-        transform: scale(0.95);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-#weatherModal .modal-header {
-    border-bottom: none;
-    font-size: 20px;
-    font-weight: bold;
+/* General Body and Container Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
     color: #333;
-}
-
-#weatherModal .modal-title {
-    flex-grow: 1;
-    text-align: center;
-}
-
-#weatherModal .btn-close {
-    background-color: #f5f5f5;
-    border-radius: 50%;
-    padding: 5px 8px;
-}
-
-/* Modal Body Styling */
-#weatherModal .modal-body {
+    margin: 0;
     padding: 20px;
-    text-align: center;
-    color: #666;
-    line-height: 1.6;
 }
 
-/* Additional Styling for Weather Content */
-#weatherModal #weatherContainer {
-    padding: 15px;
-    background: linear-gradient(to right, #6db9ef, #7ce0f9);
+
+.weather-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+
+/* Search Box Styles */
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-box input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 2px solid #ddd;
     border-radius: 5px;
-    color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-#weatherModal #weatherData {
     font-size: 16px;
-    margin-top: 10px;
-    font-weight: normal;
 }
 
-/* Responsive Handling */
-#weatherModal .modal-content {
-    @media (max-width: 768px) {
-        padding: 10px;
-    }
+.search-box button {
+    padding: 10px 12px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
 }
 
-#weatherModal .modal-body {
-    @media (max-width: 768px) {
-        padding: 10px;
-    }
+.search-box i {
+    color: #555;
+}
+
+/* Weather Box Styles */
+.weather-box {
+    text-align: center;
+    padding: 20px;
+}
+
+.weather-box img {
+    width: 100px;
+    height: auto;
+}
+
+.temperature {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #0056b3;
+}
+
+.description {
+    font-size: 1.2em;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Weather Details Grid */
+.weather-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.weather-details div {
+    text-align: center;
+    background-color: #eef3f8;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.weather-details i {
+    font-size: 24px;
+    color: #0056b3;
+}
+
+.weather-details .text span {
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.weather-details .text p {
+    margin: 0;
+    color: #666;
+}
+
+/* Not Found Message Styles */
+.not-found {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    display: none; /* Hide by default, show via JS if needed */
 }
